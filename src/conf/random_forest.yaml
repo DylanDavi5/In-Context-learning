@@ -1,0 +1,22 @@
+inherit: 
+    - base.yaml
+
+training:
+    task: random_forest
+    task_kwargs: {"depth": 4, "mus":0., "sigmas":1.}
+    curriculum:
+        points:
+            start: 26
+            end: 101
+            inc: 5
+            interval: 2000
+        ntrees:
+            start: 1
+            end: 4
+            inc: 1
+            interval: 10000
+
+out_dir: ../models/random_forest
+
+wandb:
+    name: "random_forest_standard"

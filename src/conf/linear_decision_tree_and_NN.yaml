@@ -1,0 +1,17 @@
+inherit: 
+    - 1point5mill.yaml
+
+training:
+    task: linear_decision_tree_and_NN
+    task_kwargs: {"models": ["linear_regression", "updated_decision_tree", "relu_2nn_regression"], "weights": "normal"}
+    curriculum:
+        points:
+            start: 26
+            end: 101
+            inc: 5
+            interval: 2000
+
+out_dir: ../models/linear_decision_tree_and_NN
+
+wandb:
+    name: "linear_decision_tree_and_NN"
